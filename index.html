@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COFFEEBUKA - Kepez'in Samimi Kahve Kültürü</title>
+  
+  <meta name="description" content="Kepez'in en sevilen specialty kahve dükkanı COFFEEBUKA – Samimi hava, kaliteli kahve, sıcak bir buluşma. Google 5.0 puanlı yerel kahve dükkanı." />
+  <meta name="keywords" content="kahve dükkanı, kepez kahve, specialty kahve, antalya kahve, coffeebuka, espresso, v60, kahve menüsü" />
+  <meta property="og:title" content="COFFEEBUKA – Kepez'in Samimi Kahve Kültürü" />
+  <meta property="og:description" content="Kepez'in en sevilen specialty kahve dükkanı. Kaliteli kahve ve sıcak bir hava." />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      /* Açık krem/latte köpüğü rengi ana zemin */
+      background-color: #f5ebe0; 
+      /* Koyu espresso rengi metinler */
+      color: #4a3728; 
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      color: #3e2723;
+    }
+    
+    /* Karamel tonlarında geçişler */
+    .bg-gradient-amber {
+      background: linear-gradient(to right, #c17f59, #a66342);
+    }
+    
+    .text-gradient-amber {
+      background: linear-gradient(to right, #c17f59, #a66342);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(193, 127, 89, 0.15);
+    }
+  </style>
+</head>
+
+<body class="bg-[#f5ebe0] text-[#4a3728]">
+  
+  <header class="sticky top-0 z-50 bg-[#f5ebe0]/90 backdrop-blur-sm border-b border-[#d5bdaf]">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="flex items-center">
+        <div class="w-10 h-10 rounded-full bg-gradient-amber flex items-center justify-center mr-3 shadow-md">
+          <span class="text-white font-bold text-xl">C</span>
+        </div>
+        <h1 class="text-2xl font-bold text-gradient-amber">COFFEEBUKA</h1>
+      </div>
+      
+      <nav class="hidden md:flex space-x-8">
+        <a href="#home" class="font-medium hover:text-[#c17f59] transition">Anasayfa</a>
+        <a href="#menu" class="font-medium hover:text-[#c17f59] transition">Menü</a>
+        <a href="#about" class="font-medium hover:text-[#c17f59] transition">Hakkımızda</a>
+        <a href="#contact" class="font-medium hover:text-[#c17f59] transition">İletişim</a>
+        <a href="#reviews" class="font-medium hover:text-[#c17f59] transition">Yorumlar</a>
+      </nav>
+      
+      <div class="flex items-center">
+        <a href="/qr" class="bg-gradient-amber text-white px-5 py-2.5 rounded-full font-medium hover:opacity-90 transition shadow-md">Sipariş Ver</a>
+      </div>
+    </div>
+  </header>
+  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#f5ebe0]">
+    
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=2000&q=80" alt="COFFEEBUKA" class="w-full h-full object-cover opacity-85">
+    </div>
+    
+    <div class="absolute inset-0 bg-gradient-to-b from-[#f5ebe0]/40 via-[#f5ebe0]/20 to-[#e3d5ca] z-10"></div>
+    
+    <div class="relative z-20 container mx-auto px-6 text-center mt-10 md:mt-0">
+      
+      <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold mb-4 md:mb-6 text-[#3e2723] tracking-tight leading-tight drop-shadow-[0_2px_10px_rgba(255,255,255,0.7)]">
+        Kepez'in Samimi<br class="hidden md:block"> Kahve Kültürü
+      </h1>
+      
+      <p class="text-lg sm:text-xl md:text-2xl mb-8 md:mb-12 max-w-2xl mx-auto text-[#4a3728] font-medium drop-shadow-[0_2px_5px_rgba(255,255,255,0.5)]">
+        Kaliteli kahveler, sıcak hava ve unutulmaz anlar için COFFEEBUKA'da buluşun.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 w-full max-w-md sm:max-w-none mx-auto">
+        <a href="#menu" class="w-full sm:w-auto bg-gradient-amber text-white px-8 py-4 rounded-full font-bold text-lg hover:opacity-90 transition shadow-lg">Menüyü Gör</a>
+        <a href="/qr" class="w-full sm:w-auto bg-white/70 backdrop-blur-md border-2 border-[#c17f59] text-[#c17f59] px-8 py-4 rounded-full font-bold text-lg hover:bg-[#c17f59] hover:text-white transition shadow-lg">Masada Sipariş</a>
+      </div>
+      
+    </div>
+  </section>
+
+  <section id="about" class="py-20 bg-[#e3d5ca]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 text-[#3e2723]">Hakkımızda</h2>
+        <div class="w-24 h-1 bg-gradient-amber mx-auto rounded-full"></div>
+      </div>
+      
+      <div class="flex flex-col md:flex-row items-center gap-10">
+        <div class="md:w-1/2">
+          <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Kahve Dükkanı" class="rounded-xl shadow-xl border-4 border-white w-full">
+        </div>
+        
+        <div class="md:w-1/2">
+          <h3 class="text-3xl font-bold mb-6 text-[#3e2723]">Kaliteli Kahvelerle Karşınızda</h3>
+          <p class="mb-4 text-lg text-[#5c4a3d]">COFFEEBUKA, Kepez'in kaliteli kahve kültürünü yaşatmak için kuruldu. Her bir kahvenin özel bir hikayesi vardır ve biz bu hikayeleri sizinle paylaşmak istiyoruz.</p>
+          <p class="mb-4 text-lg text-[#5c4a3d]">Taze kahve çekirdeklerimizi doğrudan üreticilerden alarak, en yüksek kalite standardını koruyoruz. Her bir fincan kahve elimizden gelen tüm sevgiyle hazırlanır.</p>
+          <div class="mt-8 space-y-4">
+            
+            <div class="flex items-center bg-[#f5ebe0] p-3 rounded-lg shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-gradient-amber flex items-center justify-center mr-4 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <p class="text-base font-medium">Yerel üreticilerden doğrudan kahve çekirdekleri</p>
+            </div>
+            
+            <div class="flex items-center bg-[#f5ebe0] p-3 rounded-lg shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-gradient-amber flex items-center justify-center mr-4 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <p class="text-base font-medium">El yapımı kahve hazırlık teknikleri</p>
+            </div>
+            
+            <div class="flex items-center bg-[#f5ebe0] p-3 rounded-lg shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-gradient-amber flex items-center justify-center mr-4 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <p class="text-base font-medium">Sıcak ve davetkâr bir ortam</p>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="menu" class="py-20 bg-[#f5ebe0]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 text-[#3e2723]">Menümüz</h2>
+        <p class="max-w-2xl mx-auto text-xl mb-6 text-[#5c4a3d]">Taze kahvelerimizle birlikte, özel lezzetlerimizi deneyin</p>
+        <div class="w-24 h-1 bg-gradient-amber mx-auto rounded-full"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div class="bg-white rounded-2xl p-8 card-hover border border-[#e3d5ca] shadow-md">
+          <h3 class="text-2xl font-bold mb-6 text-[#c17f59] border-b border-[#e3d5ca] pb-4">Espresso & Kahve</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">Klasik Espresso</span>
+              <span class="font-bold text-[#c17f59]">₺90.00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">Double Espresso</span>
+              <span class="font-bold text-[#c17f59]">₺120.00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">Cappuccino</span>
+              <span class="font-bold text-[#c17f59]">₺140.00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">Latte Macchiato</span>
+              <span class="font-bold text-[#c17f59]">₺160.00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">Americano</span>
+              <span class="font-bold text-[#c17f59]">₺145.00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">Filtre Coffee</span>
+              <span class="font-bold text-[#c17f59]">₺145.00</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-8 card-hover border border-[#e3d5ca] shadow-md">
+          <h3 class="text-2xl font-bold mb-6 text-[#c17f59] border-b border-[#e3d5ca] pb-4">Özel Kahveler</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">Mocha</span>
+              <span class="font-bold text-[#c17f59]">₺180.00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">White Mocha</span>
+              <span class="font-bold text-[#c17f59]">₺190.00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">Caramel Macchiato</span>
+              <span class="font-bold text-[#c17f59]">₺190.00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">Affogato</span>
+              <span class="font-bold text-[#c17f59]">₺180.00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">Iced Coffee</span>
+              <span class="font-bold text-[#c17f59]">₺170.00</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-2xl p-8 card-hover border border-[#e3d5ca] shadow-md">
+          <h3 class="text-2xl font-bold mb-6 text-[#c17f59] border-b border-[#e3d5ca] pb-4">Tatlılar</h3>
+          <div class="space-y-4">
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">Kruvasan</span>
+              <span class="font-bold text-[#c17f59]">₺80.00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">Tarçınlı Çörek</span>
+              <span class="font-bold text-[#c17f59]">₺100.00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">San Sebastian</span>
+              <span class="font-bold text-[#c17f59]">₺160.00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">Limonlu Turta</span>
+              <span class="font-bold text-[#c17f59]">₺140.00</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-100 pb-3">
+              <span class="text-lg font-medium text-[#4a3728]">Yabanmersinli Muffin</span>
+              <span class="font-bold text-[#c17f59]">₺90.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <section id="reviews" class="py-20 bg-gradient-to-b from-[#4a3728] to-[#3e2723]">
+    <div class="container mx-auto px-4">
+
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4 text-[#f5ebe0]">Senin Sesin, Bizim Rehberimiz.</h2>
+        <p class="max-w-2xl mx-auto text-lg mb-6 text-[#e3d5ca]">Misafirlerimizin Google üzerinden bıraktığı değerlendirmeler</p>
+        <div class="w-24 h-1 bg-gradient-amber mx-auto rounded-full"></div>
+      </div>
+
+      <div class="max-w-xl mx-auto mb-12 bg-[#f5ebe0] rounded-2xl p-6 sm:p-8 shadow-xl border border-[#d5bdaf]">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+
+          <div class="flex items-center gap-4">
+            <svg class="w-12 h-12 shrink-0" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+              <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+              <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34A21.99 21.99 0 0 0 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+              <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+            </svg>
+            <div class="text-left">
+              <div class="flex items-baseline gap-2">
+                <span class="text-4xl font-bold text-[#3e2723]" id="reviewAvg">5.0</span>
+                <span id="reviewStars" class="flex"></span>
+              </div>
+              <p class="text-sm text-[#5c4a3d] mt-1"><span id="reviewCount">128</span> Google değerlendirmesi</p>
+            </div>
+          </div>
+
+          <a href="https://search.google.com/local/writereview?placeid=PLACE_ID_BURAYA"
+             target="_blank" rel="noopener"
+             class="bg-gradient-amber text-white px-6 py-3 rounded-full font-bold hover:opacity-90 transition shadow-md whitespace-nowrap">
+            Yorum Yaz
+          </a>
+        </div>
+      </div>
+
+      <div class="relative max-w-6xl mx-auto">
+        <button id="reviewPrev" aria-label="Önceki yorumlar"
+                class="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-[#f5ebe0] text-[#4a3728] shadow-lg items-center justify-center hover:bg-white transition">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+        </button>
+
+        <div id="reviewTrack" class="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 scroll-smooth">
+          </div>
+
+        <button id="reviewNext" aria-label="Sonraki yorumlar"
+                class="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-11 h-11 rounded-full bg-[#f5ebe0] text-[#4a3728] shadow-lg items-center justify-center hover:bg-white transition">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="https://maps.google.com/?cid=17660799448409282886"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 text-[#e3d5ca] hover:text-white font-medium transition">
+          Tüm yorumları Google'da gör
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="py-20 bg-[#e3d5ca]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 text-[#3e2723]">Bize Ulaşın</h2>
+        <p class="max-w-2xl mx-auto text-xl mb-6 text-[#5c4a3d]">Sorularınız ve yorumlarınız mı var? Biz buradayız.</p>
+        <div class="w-24 h-1 bg-gradient-amber mx-auto rounded-full"></div>
+      </div>
+      
+      <div class="flex flex-col lg:flex-row gap-10">
+        
+        <div class="lg:w-1/3">
+          <div class="bg-white rounded-2xl p-8 h-full border border-[#d5bdaf] shadow-md">
+            <h3 class="text-2xl font-bold mb-8 text-[#3e2723]">İletişim Bilgileri</h3>
+            
+            <div class="space-y-8">
+              <div class="flex items-start">
+                <div class="w-12 h-12 rounded-full bg-gradient-amber flex items-center justify-center mr-4 shrink-0 shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold mb-1 text-[#3e2723]">Adres</h4>
+                  <p class="text-[#5c4a3d]">Kepez, Antalya, Türkiye</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-12 h-12 rounded-full bg-gradient-amber flex items-center justify-center mr-4 shrink-0 shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold mb-1 text-[#3e2723]">Çalışma Saatleri</h4>
+                  <p class="text-[#5c4a3d]">Pzt - Pzr: 10:00 - 01:00</p>
+                </div>
+              </div>
+              
+              <div class="flex items-start">
+                <div class="w-12 h-12 rounded-full bg-gradient-amber flex items-center justify-center mr-4 shrink-0 shadow-sm">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-xl font-bold mb-1 text-[#3e2723]">Telefon</h4>
+                  <p class="text-[#5c4a3d]">+90 123 456 7890</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="lg:w-2/3">
+          <div class="bg-white rounded-2xl p-8 h-full border border-[#d5bdaf] shadow-md">
+            <h3 class="text-2xl font-bold mb-6 text-[#3e2723]">Mesaj Gönder</h3>
+            
+            <form class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-bold mb-2 text-[#5c4a3d]">Adınız</label>
+                  <input type="text" class="w-full bg-[#f5ebe0] border border-[#d5bdaf] rounded-lg px-4 py-3 focus:outline-none focus:border-[#c17f59] focus:ring-1 focus:ring-[#c17f59] transition">
+                </div>
+                
+                <div>
+                  <label class="block text-sm font-bold mb-2 text-[#5c4a3d]">E-posta</label>
+                  <input type="email" class="w-full bg-[#f5ebe0] border border-[#d5bdaf] rounded-lg px-4 py-3 focus:outline-none focus:border-[#c17f59] focus:ring-1 focus:ring-[#c17f59] transition">
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-sm font-bold mb-2 text-[#5c4a3d]">Mesaj</label>
+                <textarea rows="4" class="w-full bg-[#f5ebe0] border border-[#d5bdaf] rounded-lg px-4 py-3 focus:outline-none focus:border-[#c17f59] focus:ring-1 focus:ring-[#c17f59] transition"></textarea>
+              </div>
+              
+              <button type="submit" class="w-full md:w-auto bg-gradient-amber text-white font-bold py-3 px-10 rounded-lg hover:shadow-lg hover:opacity-90 transition">Gönder</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-10 flex flex-col lg:flex-row gap-6 bg-white p-4 sm:p-6 rounded-2xl border border-[#d5bdaf] shadow-md">
+        
+        <div class="w-full lg:w-1/2 h-64 rounded-xl overflow-hidden relative shadow-inner">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3189.4582432015027!2d30.70982241215753!3d36.92721557209528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14c3858be9ea216b%3A0xf517c38703d99946!2sCOFFEEBUKA!5e0!3m2!1str!2str!4v1780653362992!5m2!1str!2str" 
+            width="100%" 
+            height="100%" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="transition-all duration-500 ease-in-out border border-[#e3d5ca] rounded-xl">
+          </iframe>
+        </div>
+
+        <div class="w-full lg:w-1/2 flex flex-col sm:flex-row gap-6">
+          
+          <div class="w-full sm:w-1/2 flex flex-col justify-center text-left bg-[#f5ebe0] p-6 rounded-xl border border-[#d5bdaf]">
+            <div class="flex items-center mb-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-[#c17f59] mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <h4 class="text-[#c17f59] font-bold text-xl">Açık Adres</h4>
+            </div>
+            <p class="text-base text-[#5c4a3d] leading-relaxed font-medium">
+              Gündoğdu Mah, 2478. Sk. <br>
+              No:18<br>
+              Kepez / Antalya 07060
+            </p>
+          </div>
+
+          <div class="w-full sm:w-1/2 h-64 rounded-xl overflow-hidden relative group shadow-sm border border-[#e3d5ca]">
+            <img 
+              src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              alt="COFFEEBUKA Atmosfer" 
+              class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-in-out"
+            >
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-[#4a3728] py-8 border-t border-[#c17f59]">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-[#e3d5ca] font-medium">© 2026 COFFEEBUKA. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+<script>
+  /* ============================================================
+     GOOGLE PLACES API İLE DİNAMİK YORUMLAR (FOTOĞRAFSIZ)
+  ============================================================ */
+  
+  const PLACE_ID = "CHIJ_SENIN_MEKANININ_PLACE_ID_SI_BURAYA"; 
+
+  function initDynamicReviews() {
+    const map = new google.maps.Map(document.createElement('div'));
+    const service = new google.maps.places.PlacesService(map);
+
+    service.getDetails({
+      placeId: PLACE_ID,
+      fields: ['rating', 'user_ratings_total', 'reviews']
+    }, (place, status) => {
+      if (status === google.maps.places.PlacesServiceStatus.OK && place.reviews) {
+        const highRatedReviews = place.reviews.filter(review => review.rating >= 4);
+        renderReviews(place.rating, place.user_ratings_total, highRatedReviews);
+      } else {
+        console.error("Google Yorumları çekilemedi veya yorum bulunmuyor.");
+      }
+    });
+  }
+
+  function renderReviews(avgRating, totalCount, reviews) {
+    const starSvg = (filled) =>
+      `<svg class="w-4 h-4 ${filled ? 'text-[#fbbf24]' : 'text-[#d5bdaf]'}" fill="currentColor" viewBox="0 0 20 20">
+        <path d="M9.05 2.93c.3-.92 1.6-.92 1.9 0l1.4 4.32a1 1 0 00.95.69h4.54c.97 0 1.37 1.24.59 1.81l-3.67 2.67a1 1 0 00-.36 1.12l1.4 4.31c.3.92-.75 1.69-1.54 1.12l-3.67-2.67a1 1 0 00-1.18 0l-3.67 2.67c-.79.57-1.84-.2-1.54-1.12l1.4-4.31a1 1 0 00-.36-1.12L1.6 9.75c-.78-.57-.38-1.81.59-1.81h4.54a1 1 0 00.95-.69l1.4-4.32z"/>
+      </svg>`;
+
+    const starsRow = (n) => Array.from({ length: 5 }, (_, i) => starSvg(i < n)).join("");
+    // İsimlerin baş harflerini alan fonksiyon
+    const initials = (name) => name.trim().split(/\s+/).map(w => w[0]).slice(0, 2).join("").toUpperCase();
+
+    document.getElementById("reviewAvg").textContent = avgRating.toFixed(1);
+    document.getElementById("reviewCount").textContent = totalCount;
+    document.getElementById("reviewStars").innerHTML = starsRow(Math.round(avgRating));
+
+    const track = document.getElementById("reviewTrack");
+    
+    // Fotoğraf çekme kısmı iptal edildi, sadece baş harfler (initials) kullanılıyor
+    track.innerHTML = reviews.map(r => `
+      <article class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-[#f5ebe0] rounded-2xl p-6 shadow-md border border-[#e3d5ca] flex flex-col">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 rounded-full bg-gradient-amber flex items-center justify-center text-white font-bold shrink-0">${initials(r.author_name)}</div>
+            <div>
+              <p class="font-bold text-[#3e2723] leading-tight">${r.author_name}</p>
+              <p class="text-xs text-[#8a7a6d]">${r.relative_time_description}</p>
+            </div>
+          </div>
+          <svg class="w-5 h-5 shrink-0" viewBox="0 0 48 48" aria-hidden="true">
+            <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+            <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+            <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34A21.99 21.99 0 0 0 2 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+            <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+          </svg>
+        </div>
+        <div class="flex mb-3">${starsRow(r.rating)}</div>
+        <p class="text-[#5c4a3d] leading-relaxed text-sm">${r.text}</p>
+      </article>
+    `).join("");
+
+    const prev = document.getElementById("reviewPrev");
+    const next = document.getElementById("reviewNext");
+    const scrollBy = () => Math.min(track.clientWidth * 0.9, 360);
+    prev.addEventListener("click", () => track.scrollBy({ left: -scrollBy(), behavior: "smooth" }));
+    next.addEventListener("click", () => track.scrollBy({ left:  scrollBy(), behavior: "smooth" }));
+  }
+
+  window.addEventListener('load', initDynamicReviews);
+</script>
+
+</body>
+</html>
